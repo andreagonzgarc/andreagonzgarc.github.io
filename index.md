@@ -26,7 +26,7 @@ title: About
 <main class="content">
 
 <p>
-I am an economist interested in monetary policy, inflation expectations, forecast evaluation, macroeconometrics, and financial stability.
+I am an economist interested in monetary policy, labor economics, forecast evaluation, macroeconometrics, and financial stability.
 </p>
 
 <p>

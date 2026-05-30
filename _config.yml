@@ -2,7 +2,7 @@ title: Andrea González
 description: Economist
 theme: jekyll-theme-minimal
 
-baseurl: "/andreagonzalez.github.io"
+baseurl: ""
 
 github:
   is_project_page: false

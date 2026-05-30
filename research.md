@@ -4,9 +4,9 @@ title: Research
 ---
 
 <nav class="topnav">
-  <a href="/">About</a>
-  <a href="/research">Research</a>
-  <a href="/projects">Other Projects</a>
+  <a href="{{ '/' | relative_url }}">About</a>
+  <a href="{{ '/research' | relative_url }}">Research</a>
+  <a href="{{ '/projects' | relative_url }}">Other Projects</a>
 </nav>
 
 <div class="page-layout">

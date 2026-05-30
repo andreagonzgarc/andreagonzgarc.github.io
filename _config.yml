@@ -1,0 +1,8 @@
+title: Andrea González
+description: Economist
+theme: jekyll-theme-minimal
+
+baseurl: "/andreagonzalez.github.io"
+
+github:
+  is_project_page: false

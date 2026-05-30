@@ -1,0 +1,40 @@
+---
+layout: default
+title: Other Projects
+---
+
+<nav class="topnav">
+  <a href="{{ '/' | relative_url }}">About</a>
+  <a href="{{ '/research' | relative_url }}">Research</a>
+  <a href="{{ '/projects' | relative_url }}">Other Projects</a>
+</nav>
+
+<div class="page-layout">
+
+# Other Projects
+
+
+## White Door Closet
+
+An automation pipeline for closet cleanup resales, photo auditing, inventory tracking, and Facebook Marketplace collage generation.
+
+The project helps organize clothing items, process iPhone photos, create listing-ready images, and track inventory in Excel.
+
+**Tools:** Python, Excel, image processing, marketplace automation
+
+[View repository](https://github.com/andreagonzgarc/white-door-closet)
+
+---
+
+## Wimbledon 2008 Comments
+
+A scraping project focused on collecting and organizing online comments related to Wimbledon 2008.
+
+The project explores how people discuss tennis history, player narratives, match legacy, and the cultural memory of one of the most iconic matches in tennis.
+
+**Tools:** Python, web scraping, text processing
+
+[View repository](https://github.com/andreagonzgarc/wimbledon2008comments)
+
+
+</div>

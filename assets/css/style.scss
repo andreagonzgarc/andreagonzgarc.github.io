@@ -3,17 +3,44 @@
 
 @import "{{ site.theme }}";
 
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
 body {
   font-family: Helvetica, Arial, sans-serif;
   color: #555;
   background: #fff;
 }
 
-.wrapper {
-  width: 1180px;
-  max-width: 92%;
-  margin: 55px auto;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+div,
+strong,
+b {
+  font-family: Helvetica, Arial, sans-serif;
 }
+
+
+/* Center the website and automatically adjust the
+   left/right margins when the browser width changes */
+
+.wrapper {
+  width: calc(100% - 50px);
+  max-width: 1050px;
+  margin: 45px auto;
+}
+
+
+/* Hide elements inherited from the GitHub Pages theme */
 
 header {
   display: none;
@@ -28,15 +55,52 @@ footer {
   display: none;
 }
 
+
+/* =========================================================
+   COLORS
+   ========================================================= */
+
+/* Headers and bold text:
+   RGB (56, 124, 193) */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  color: rgb(56, 124, 193);
+}
+
+
+/* Links:
+   RGB (0, 71, 127) */
+
+a {
+  color: rgb(0, 71, 127);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
 .topnav {
   text-align: right;
-  margin-bottom: 25px;
-  font-size: 19px;
+  margin-bottom: 30px;
+  font-size: 17px;
 }
 
 .topnav a {
-  margin-left: 26px;
-  color: #b00020;
+  margin-left: 24px;
+  color: rgb(0, 71, 127);
   text-decoration: none;
 }
 
@@ -44,89 +108,133 @@ footer {
   text-decoration: underline;
 }
 
+
+/* =========================================================
+   HOME PAGE
+   ========================================================= */
+
 .home-layout {
   display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 80px;
+
+  /* Profile column + flexible main-content column */
+  grid-template-columns: 270px minmax(0, 1fr);
+
+  gap: 60px;
   align-items: start;
 }
 
+
+/* Profile photo */
+
 .profile-photo {
-  width: 340px;
+  width: 250px;
   max-width: 100%;
+  height: auto;
+  display: block;
   border-radius: 0;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
+
+/* Name */
+
 .profile h1 {
-  font-size: 32px;
+  font-size: 30px;
   line-height: 1.15;
-  color: #333;
+  color: rgb(56, 124, 193);
+  margin-top: 0;
   margin-bottom: 10px;
 }
 
+
+/* Subtitle under name */
+
 .subtitle {
-  color: #b00020;
-  font-size: 20px;
-  margin: 8px 0 28px 0;
+  color: #555;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 8px 0 25px 0;
 }
+
+
+/* Location / secondary information */
 
 .location {
   color: #777;
-  font-size: 16px;
-  margin-top: 28px;
+  font-size: 15px;
+  margin-top: 25px;
 }
+
+
+/* =========================================================
+   MAIN TEXT
+   ========================================================= */
 
 .content,
 .page-layout {
-  font-size: 21px;
+  font-size: 18px;
   line-height: 1.55;
 }
 
 .content p,
 .page-layout p {
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
+
+/* Section headings */
+
+.content h1,
 .content h2,
+.content h3,
 .page-layout h1,
-.page-layout h2 {
-  color: #333;
+.page-layout h2,
+.page-layout h3 {
+  color: rgb(56, 124, 193);
 }
 
 .content h2 {
-  font-size: 24px;
-  margin-top: 34px;
+  font-size: 23px;
+  margin-top: 32px;
 }
 
+
+/* =========================================================
+   PROJECT / RESEARCH PAGES
+   ========================================================= */
+
 .page-layout {
-  max-width: 850px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .page-layout h1 {
-  font-size: 34px;
-  margin-bottom: 30px;
+  font-size: 32px;
+  margin-bottom: 28px;
 }
 
 .page-layout h2 {
-  color: #b00020;
-  font-size: 25px;
-  margin-top: 35px;
+  color: rgb(56, 124, 193);
+  font-size: 23px;
+  margin-top: 34px;
 }
 
-a {
-  color: #b00020;
-}
+
+/* =========================================================
+   TABLET / SMALLER BROWSER WINDOW
+   ========================================================= */
 
 @media screen and (max-width: 850px) {
+
   .wrapper {
+    width: calc(100% - 40px);
     margin: 30px auto;
   }
 
   .topnav {
     text-align: left;
+    margin-bottom: 25px;
   }
 
   .topnav a {
@@ -135,16 +243,48 @@ a {
   }
 
   .home-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .profile-photo {
+    width: 210px;
+  }
+
+  .profile h1 {
+    font-size: 27px;
+  }
+
+  .content,
+  .page-layout {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media screen and (max-width: 650px) {
+
+  .wrapper {
+    width: calc(100% - 32px);
+    margin: 24px auto;
+  }
+
+  /* Stack profile above main content */
+
+  .home-layout {
     grid-template-columns: 1fr;
     gap: 25px;
   }
 
   .profile-photo {
-    width: 260px;
+    width: 230px;
   }
 
-  .content,
-  .page-layout {
-    font-size: 18px;
+  .topnav {
+    font-size: 16px;
   }
 }

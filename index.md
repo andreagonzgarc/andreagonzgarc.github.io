@@ -11,7 +11,7 @@ title: About
 
 <div class="home-layout">
 
-<aside class="profile">
+<aside class="profile" markdown="1">
 
 <img src="https://github.com/andreagonzgarc.png" class="profile-photo">
 
@@ -23,25 +23,19 @@ title: About
 
 </aside>
 
-<main class="content">
+<main class="content" markdown="1">
 
-<p>
 I am an economist interested in monetary policy, labor economics, forecast evaluation, macroeconometrics, and financial stability.
-</p>
 
-<p>
 My current research focuses on inflation risks, forecast performance, and risk-management approaches to monetary policy.
-</p>
 
-<h2>Research Interests</h2>
+## Research Interests
 
-<ul>
-<li>Monetary Policy</li>
-<li>Labor Economics</li>
-<li>Forecast Evaluation</li>
-<li>Macroeconometrics</li>
-<li>Financial Stability</li>
-</ul>
+- Monetary Policy
+- Labor Economics
+- Forecast Evaluation
+- Macroeconometrics
+- Financial Stability
 
 </main>
 

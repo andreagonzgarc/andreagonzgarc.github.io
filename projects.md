@@ -9,10 +9,9 @@ title: Other Projects
   <a href="{{ '/projects' | relative_url }}">Other Projects</a>
 </nav>
 
-<div class="page-layout">
+<div class="page-layout" markdown="1">
 
 # Other Projects
-
 
 ## White Door Closet
 
@@ -24,8 +23,6 @@ The project helps organize clothing items, process iPhone photos, create listing
 
 [View repository](https://github.com/andreagonzgarc/white-door-closet)
 
----
-
 ## Wimbledon 2008 Comments
 
 A scraping project focused on collecting and organizing online comments related to Wimbledon 2008.
@@ -35,6 +32,5 @@ The project explores how people discuss tennis history, player narratives, match
 **Tools:** Python, web scraping, text processing
 
 [View repository](https://github.com/andreagonzgarc/wimbledon2008comments)
-
 
 </div>

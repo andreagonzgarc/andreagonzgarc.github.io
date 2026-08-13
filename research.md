@@ -9,10 +9,10 @@ title: Research
   <a href="{{ '/projects' | relative_url }}">Other Projects</a>
 </nav>
 
-<div class="page-layout">
+<div class="page-layout" markdown="1">
 
 # Research
 
-[Coming soon]
+Coming soon.
 
 </div>

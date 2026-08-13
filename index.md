@@ -4,7 +4,7 @@ title: About
 ---
 
 <nav class="topnav">
-  <a href="{{ '/' | relative_url }}">About</a>
+  <a class="active" href="{{ '/' | relative_url }}">About</a>
   <a href="{{ '/research' | relative_url }}">Research</a>
   <a href="{{ '/projects' | relative_url }}">Other Projects</a>
 </nav>

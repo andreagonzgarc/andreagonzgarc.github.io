@@ -10,21 +10,21 @@
 
 @font-face {
   font-family: "CMU Sans Serif";
-  src: url("../fonts/cmunss.ttf") format("truetype");
+  src: url("/assets/fonts/cmunss.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "CMU Sans Serif";
-  src: url("../fonts/cmunsx.ttf") format("truetype");
+  src: url("/assets/fonts/cmunsx.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "CMU Sans Serif";
-  src: url("../fonts/cmunsi.ttf") format("truetype");
+  src: url("/assets/fonts/cmunsi.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
@@ -44,40 +44,25 @@ body {
   background: #fff;
 }
 
-/* Make sure the imported GitHub theme does not override
-   CMU Sans on individual elements */
+/* Prevent imported theme styles from changing the font */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-span,
-div,
-strong,
-b,
-em,
-i,
-li {
+body * {
   font-family: "CMU Sans Serif", Arial, sans-serif;
 }
 
 
 /* Center the website.
-   The content stops growing at 1050px, while the margins
-   automatically expand and contract with the browser. */
+   Content width stays stable on large screens,
+   while side margins respond to browser width. */
 
 .wrapper {
   width: calc(100% - 50px);
   max-width: 1050px;
-  margin: 45px auto;
+  margin: 30px auto 45px auto;
 }
 
 
-/* Remove elements inherited from the GitHub Pages theme */
+/* Remove default GitHub theme elements */
 
 header {
   display: none;
@@ -86,7 +71,7 @@ header {
 section {
   width: 100%;
   float: none;
-  border-top: none;
+  border: none;
 }
 
 footer {
@@ -94,8 +79,7 @@ footer {
 }
 
 
-/* Remove unwanted gray horizontal rules inherited
-   from the theme */
+/* Remove theme-generated horizontal rules */
 
 hr {
   display: none;
@@ -103,41 +87,52 @@ hr {
 
 
 /* =========================================================
-   COLORS
+   COLOR SYSTEM
    ========================================================= */
 
 /*
-   Headings + bold:
-   RGB (56, 124, 193)
-   HEX #387CC1
+   DARK BLUE
+   RGB (0, 71, 127)
+   HEX #00477F
+
+   Used for:
+   - your name
+   - main page titles
+   - default navigation tabs
+   - URLs
 */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-b {
-  color: rgb(56, 124, 193);
-}
+$dark-blue: rgb(0, 71, 127);
 
 
 /*
-   URLs:
-   RGB (0, 71, 127)
-   HEX #00477F
+   BEAMER BLUE
+   RGB (56, 124, 193)
+   HEX #387CC1
+
+   Used for:
+   - selected tab
+   - hover state
+   - section headings
+   - bold emphasis
+   - navigation rule
 */
 
+$beamer-blue: rgb(56, 124, 193);
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
 a {
-  color: rgb(0, 71, 127);
+  color: $dark-blue;
   text-decoration: none;
 }
 
 a:hover {
-  color: rgb(56, 124, 193);
-  text-decoration: underline;
+  color: $beamer-blue;
+  text-decoration: none;
 }
 
 
@@ -148,8 +143,7 @@ a:hover {
 .topnav {
   text-align: right;
 
-  /* Beamer-style blue rule underneath navigation */
-  border-bottom: 1px solid rgb(56, 124, 193);
+  border-bottom: 1px solid $beamer-blue;
 
   padding-bottom: 10px;
   margin-bottom: 30px;
@@ -157,34 +151,74 @@ a:hover {
   font-size: 17px;
 }
 
+
+/* All tabs are bold and dark blue by default */
+
 .topnav a {
+  display: inline-block;
+
   margin-left: 24px;
-  color: rgb(0, 71, 127);
+
+  color: $dark-blue;
+
+  font-weight: 700;
+
   text-decoration: none;
 }
 
+
+/* Current page */
+
+.topnav a.active {
+  color: $beamer-blue;
+}
+
+
+/* Hover */
+
 .topnav a:hover {
-  color: rgb(56, 124, 193);
+  color: $beamer-blue;
+  font-weight: 700;
   text-decoration: none;
 }
 
 
 /* =========================================================
-   HOME PAGE
+   HOME / COMMON TWO-COLUMN LAYOUT
    ========================================================= */
+
+/*
+   Use this SAME structure on About, Research,
+   and Other Projects.
+
+   Left:
+   profile/sidebar
+
+   Right:
+   changing page content
+*/
 
 .home-layout {
   display: grid;
 
-  /* Profile column + flexible main-content column */
   grid-template-columns: 270px minmax(0, 1fr);
 
   gap: 60px;
+
   align-items: start;
 }
 
 
-/* ---------- Profile photo ---------- */
+/* =========================================================
+   LEFT PROFILE SIDEBAR
+   ========================================================= */
+
+.profile {
+  width: 100%;
+}
+
+
+/* Profile photo */
 
 .profile-photo {
   width: 250px;
@@ -194,36 +228,40 @@ a:hover {
   display: block;
 
   border-radius: 0;
-  margin-bottom: 14px;
+
+  margin: 0 0 14px 0;
 }
 
 
-/* ---------- Name ---------- */
+/* Name */
 
 .profile h1 {
-  font-size: 30px;
-  line-height: 1.15;
+  color: $dark-blue;
 
-  color: rgb(56, 124, 193);
+  font-size: 30px;
+  font-weight: 700;
+
+  line-height: 1.15;
 
   margin-top: 0;
   margin-bottom: 10px;
 }
 
 
-/* ---------- Professional title ---------- */
+/* Economist */
 
 .subtitle {
   color: #555;
 
   font-size: 18px;
+
   line-height: 1.4;
 
   margin: 8px 0 25px 0;
 }
 
 
-/* ---------- Location ---------- */
+/* Location */
 
 .location {
   color: #777;
@@ -235,61 +273,104 @@ a:hover {
 
 
 /* =========================================================
-   MAIN TEXT
+   MAIN CONTENT
    ========================================================= */
 
-.content,
-.page-layout {
+.content {
+  min-width: 0;
+
   font-size: 18px;
   line-height: 1.55;
 }
 
-.content p,
-.page-layout p {
+
+.content p {
+  margin-top: 0;
   margin-bottom: 22px;
 }
 
 
-/* ---------- Headings ---------- */
+/* =========================================================
+   MAIN PAGE TITLES
+   ========================================================= */
+
+/*
+   Research
+   Other Projects
+   etc.
+
+   Dark blue, like your name.
+*/
 
 .content h1,
-.content h2,
-.content h3,
-.page-layout h1,
-.page-layout h2,
-.page-layout h3 {
-  color: rgb(56, 124, 193);
-  font-weight: 700;
-}
+.page-layout h1 {
+  color: $dark-blue;
 
-.content h2 {
-  font-size: 23px;
-  margin-top: 32px;
+  font-size: 30px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  margin-top: 0;
+  margin-bottom: 28px;
 }
 
 
 /* =========================================================
-   RESEARCH / OTHER PROJECT PAGES
+   SECTION HEADINGS
    ========================================================= */
 
-.page-layout {
-  max-width: 800px;
+/*
+   Research Interests
+   White Door Closet
+   Wimbledon 2008 Comments
+   etc.
+*/
 
-  margin-left: auto;
-  margin-right: auto;
+.content h2,
+.content h3,
+.page-layout h2,
+.page-layout h3 {
+  color: $beamer-blue;
+
+  font-weight: 700;
 }
 
-.page-layout h1 {
-  font-size: 32px;
-  margin-bottom: 28px;
-}
 
+.content h2,
 .page-layout h2 {
-  color: rgb(56, 124, 193);
-
   font-size: 23px;
 
-  margin-top: 34px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+
+.content h3,
+.page-layout h3 {
+  font-size: 20px;
+
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   BOLD / EMPHASIS
+   ========================================================= */
+
+strong,
+b {
+  color: $beamer-blue;
+  font-weight: 700;
+}
+
+
+/* Italics stay normal text color */
+
+em,
+i {
+  color: inherit;
 }
 
 
@@ -298,9 +379,13 @@ a:hover {
    ========================================================= */
 
 .content ul,
-.page-layout ul {
+.content ol,
+.page-layout ul,
+.page-layout ol {
   margin-top: 8px;
+  margin-bottom: 20px;
 }
+
 
 .content li,
 .page-layout li {
@@ -309,42 +394,88 @@ a:hover {
 
 
 /* =========================================================
-   TABLET / SMALLER BROWSER WINDOW
+   LEGACY PAGE-LAYOUT CLASS
+   ========================================================= */
+
+/*
+   You may still have page-layout in older pages.
+   Keep it styled consistently.
+*/
+
+.page-layout {
+  max-width: 800px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+
+.page-layout p {
+  margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   TABLET / SMALLER WINDOW
    ========================================================= */
 
 @media screen and (max-width: 850px) {
 
   .wrapper {
     width: calc(100% - 40px);
-    margin: 30px auto;
+    margin: 25px auto 35px auto;
   }
+
 
   .topnav {
     text-align: left;
+
     margin-bottom: 25px;
   }
 
+
   .topnav a {
-    display: inline-block;
-    margin: 0 18px 10px 0;
+    margin-left: 0;
+    margin-right: 18px;
+    margin-bottom: 8px;
   }
+
 
   .home-layout {
     grid-template-columns: 220px minmax(0, 1fr);
+
     gap: 35px;
   }
+
 
   .profile-photo {
     width: 210px;
   }
 
+
   .profile h1 {
     font-size: 27px;
   }
 
+
   .content,
   .page-layout {
     font-size: 17px;
+  }
+
+
+  .content h1,
+  .page-layout h1 {
+    font-size: 27px;
+  }
+
+
+  .content h2,
+  .page-layout h2 {
+    font-size: 21px;
   }
 }
 
@@ -357,15 +488,29 @@ a:hover {
 
   .wrapper {
     width: calc(100% - 32px);
-    margin: 24px auto;
+
+    margin: 20px auto 30px auto;
   }
 
 
-  /* Stack profile above main content */
+  .topnav {
+    text-align: left;
+
+    font-size: 16px;
+  }
+
+
+  .topnav a {
+    margin-right: 14px;
+  }
+
+
+  /* Stack sidebar above page content */
 
   .home-layout {
     grid-template-columns: 1fr;
-    gap: 25px;
+
+    gap: 30px;
   }
 
 
@@ -374,13 +519,8 @@ a:hover {
   }
 
 
-  .topnav {
-    text-align: left;
-    font-size: 16px;
-  }
-
-
-  .topnav a {
-    margin-right: 14px;
+  .content h1,
+  .page-layout h1 {
+    font-size: 26px;
   }
 }

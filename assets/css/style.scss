@@ -34,13 +34,14 @@
    GENERAL
    ========================================================= */
 
-html {
-  /*
-     Always reserve space for the browser scrollbar.
+/*
+   Always reserve scrollbar space.
 
-     This prevents the entire page from shifting horizontally
-     when moving between short pages and the CV page.
-  */
+   This prevents the page from shifting horizontally
+   when switching between shorter pages and the CV page.
+*/
+
+html {
   overflow-y: scroll;
 }
 
@@ -62,9 +63,7 @@ body * {
 }
 
 
-/* Center the website.
-   Content width stays stable on large screens,
-   while side margins respond to browser width. */
+/* Center website */
 
 .wrapper {
   width: calc(100% - 50px);
@@ -109,7 +108,7 @@ hr {
    Used for:
    - your name
    - main page titles
-   - default navigation tabs
+   - inactive navigation tabs
    - URLs
 */
 
@@ -122,7 +121,7 @@ $dark-blue: rgb(0, 71, 127);
    HEX #387CC1
 
    Used for:
-   - selected tab
+   - selected navigation tab
    - hover state
    - section headings
    - bold emphasis
@@ -136,7 +135,8 @@ $beamer-blue: rgb(56, 124, 193);
    LINKS
    ========================================================= */
 
-a {
+a,
+a:visited {
   color: $dark-blue;
   text-decoration: none;
 }
@@ -163,9 +163,15 @@ a:hover {
 }
 
 
-/* All tabs are bold and dark blue by default */
+/* ---------------------------------------------------------
+   DEFAULT / INACTIVE TABS
 
-.topnav a {
+   Every navigation tab is dark blue unless that particular
+   link has class="active".
+   --------------------------------------------------------- */
+
+.topnav a,
+.topnav a:visited {
   display: inline-block;
 
   margin-left: 24px;
@@ -178,18 +184,30 @@ a:hover {
 }
 
 
-/* Current page */
+/* ---------------------------------------------------------
+   CURRENT / ACTIVE PAGE
 
-.topnav a.active {
+   Only the link with class="active" becomes Beamer blue.
+   --------------------------------------------------------- */
+
+.topnav a.active,
+.topnav a.active:visited {
   color: $beamer-blue;
 }
 
 
-/* Hover */
+/* ---------------------------------------------------------
+   HOVER
 
-.topnav a:hover {
+   Any tab becomes Beamer blue while the cursor is over it.
+   --------------------------------------------------------- */
+
+.topnav a:hover,
+.topnav a.active:hover {
   color: $beamer-blue;
+
   font-weight: 700;
+
   text-decoration: none;
 }
 
@@ -361,6 +379,7 @@ a:hover {
 strong,
 b {
   color: $beamer-blue;
+
   font-weight: 700;
 }
 
@@ -417,8 +436,8 @@ i {
    ========================================================= */
 
 /*
-   The CV uses the same right-hand content column as
-   About, Research, and Other Projects.
+   CV uses exactly the same right-hand content column
+   as About, Research, and Other Projects.
 */
 
 .cv-content {
@@ -427,7 +446,7 @@ i {
 }
 
 
-/* Small link above PDF */
+/* Link above PDF */
 
 .cv-toolbar {
   text-align: right;
@@ -439,8 +458,10 @@ i {
 }
 
 
-.cv-toolbar a {
+.cv-toolbar a,
+.cv-toolbar a:visited {
   color: $dark-blue;
+
   font-weight: 700;
 }
 
@@ -451,24 +472,15 @@ i {
 
 
 /*
-   PDF fills the ENTIRE remaining right-hand column.
+   PDF fills the entire available right-hand column.
 */
 
 .cv-pdf {
   display: block;
 
   width: 100%;
-
-  /*
-     Tall enough to make the CV comfortable to read,
-     while scrolling happens inside the PDF viewer.
-  */
   height: 950px;
 
-  /*
-     No heavy border, so it integrates more cleanly
-     with the minimalist website aesthetic.
-  */
   border: 1px solid rgba(56, 124, 193, 0.25);
 
   box-sizing: border-box;
@@ -485,6 +497,7 @@ i {
 
   .wrapper {
     width: calc(100% - 40px);
+
     margin: 25px auto 35px auto;
   }
 
@@ -496,7 +509,8 @@ i {
   }
 
 
-  .topnav a {
+  .topnav a,
+  .topnav a:visited {
     margin-left: 0;
     margin-right: 18px;
     margin-bottom: 8px;
@@ -564,7 +578,9 @@ i {
   }
 
 
-  .topnav a {
+  .topnav a,
+  .topnav a:visited {
+    margin-left: 0;
     margin-right: 14px;
   }
 

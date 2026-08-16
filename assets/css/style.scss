@@ -309,13 +309,21 @@ a:hover {
   text-decoration: none;
 }
 
-.github-link i {
-  margin-left: 3px;
-  font-size: 0.95em;
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.github-link:hover,
-.github-link:hover i {
+.github-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.github-link:hover {
   color: $beamer-blue;
 }
 
@@ -640,7 +648,7 @@ i {
   }
 
 
-  .cv-pdf {git 
+  .cv-pdf {
     height: 700px;
   }
 }

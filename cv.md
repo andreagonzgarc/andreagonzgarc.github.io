@@ -6,25 +6,39 @@ permalink: /cv/
 
 <nav class="topnav">
   <a href="{{ '/' | relative_url }}">About</a>
+  <a class="active" href="{{ '/cv' | relative_url }}">CV</a>
   <a href="{{ '/research' | relative_url }}">Research</a>
   <a href="{{ '/projects' | relative_url }}">Other Projects</a>
-  <a class="active" href="{{ '/cv' | relative_url }}">CV</a>
 </nav>
 
-<div class="cv-page">
+<div class="home-layout">
 
-<h1>Curriculum Vitae</h1>
+<aside class="profile" markdown="1">
 
-<p class="cv-links">
+<img src="https://github.com/andreagonzgarc.png" class="profile-photo">
+
+# Andrea González
+
+<p class="subtitle">Economist</p>
+
+<p class="location">Mexico City, Mexico</p>
+
+</aside>
+
+<main class="content cv-content">
+
+<div class="cv-toolbar">
   <a href="{{ '/assets/pdf/CV_AGG_2026_test.pdf' | relative_url }}" target="_blank">
     Open CV in new tab
   </a>
-</p>
+</div>
 
 <iframe
   src="{{ '/assets/pdf/CV_AGG_2026_test.pdf' | relative_url }}"
   class="cv-pdf"
   title="Andrea González García CV">
 </iframe>
+
+</main>
 
 </div>

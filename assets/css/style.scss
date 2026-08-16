@@ -34,6 +34,16 @@
    GENERAL
    ========================================================= */
 
+html {
+  /*
+     Always reserve space for the browser scrollbar.
+
+     This prevents the entire page from shifting horizontally
+     when moving between short pages and the CV page.
+  */
+  overflow-y: scroll;
+}
+
 html,
 body {
   font-family: "CMU Sans Serif", Arial, sans-serif;
@@ -43,6 +53,7 @@ body {
   color: #555;
   background: #fff;
 }
+
 
 /* Prevent imported theme styles from changing the font */
 
@@ -188,8 +199,11 @@ a:hover {
    ========================================================= */
 
 /*
-   Use this SAME structure on About, Research,
-   and Other Projects.
+   SAME structure on:
+   - About
+   - CV
+   - Research
+   - Other Projects
 
    Left:
    profile/sidebar
@@ -295,8 +309,7 @@ a:hover {
    ========================================================= */
 
 .content h1,
-.page-layout h1,
-.cv-page h1 {
+.page-layout h1 {
   color: $dark-blue;
 
   font-size: 30px;
@@ -400,42 +413,67 @@ i {
 
 
 /* =========================================================
-   CV PAGE
+   CV
    ========================================================= */
 
-.cv-page {
+/*
+   The CV uses the same right-hand content column as
+   About, Research, and Other Projects.
+*/
+
+.cv-content {
   width: 100%;
+  min-width: 0;
 }
 
-.cv-page h1 {
-  margin-bottom: 12px;
-}
 
-.cv-links {
+/* Small link above PDF */
+
+.cv-toolbar {
+  text-align: right;
+
   margin-top: 0;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
+
+  font-size: 16px;
 }
 
-.cv-links a {
+
+.cv-toolbar a {
   color: $dark-blue;
   font-weight: 700;
 }
 
-.cv-links a:hover {
+
+.cv-toolbar a:hover {
   color: $beamer-blue;
 }
 
-/* Embedded browser PDF viewer */
+
+/*
+   PDF fills the ENTIRE remaining right-hand column.
+*/
 
 .cv-pdf {
   display: block;
 
   width: 100%;
-  height: 1100px;
 
-  border: 1px solid rgba(56, 124, 193, 0.35);
+  /*
+     Tall enough to make the CV comfortable to read,
+     while scrolling happens inside the PDF viewer.
+  */
+  height: 950px;
+
+  /*
+     No heavy border, so it integrates more cleanly
+     with the minimalist website aesthetic.
+  */
+  border: 1px solid rgba(56, 124, 193, 0.25);
 
   box-sizing: border-box;
+
+  background: #fff;
 }
 
 
@@ -489,8 +527,7 @@ i {
 
 
   .content h1,
-  .page-layout h1,
-  .cv-page h1 {
+  .page-layout h1 {
     font-size: 27px;
   }
 
@@ -502,7 +539,7 @@ i {
 
 
   .cv-pdf {
-    height: 900px;
+    height: 850px;
   }
 }
 
@@ -532,7 +569,10 @@ i {
   }
 
 
-  /* Stack sidebar above page content */
+  /*
+     On phones only:
+     stack sidebar above page content.
+  */
 
   .home-layout {
     grid-template-columns: 1fr;
@@ -547,13 +587,17 @@ i {
 
 
   .content h1,
-  .page-layout h1,
-  .cv-page h1 {
+  .page-layout h1 {
     font-size: 26px;
   }
 
 
+  .cv-toolbar {
+    text-align: left;
+  }
+
+
   .cv-pdf {
-    height: 720px;
+    height: 700px;
   }
 }

@@ -27,11 +27,6 @@ permalink: /cv/
 
 <main class="content cv-content">
 
-<div class="cv-toolbar">
-  <a href="{{ '/assets/pdf/CV_AGG_2026_test.pdf' | relative_url }}" target="_blank">
-    Open CV in new tab
-  </a>
-</div>
 
 <iframe
   src="{{ '/assets/pdf/CV_AGG_2026_test.pdf' | relative_url }}"

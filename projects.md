@@ -7,6 +7,7 @@ title: Other Projects
   <a href="{{ '/' | relative_url }}">About</a>
   <a href="{{ '/research' | relative_url }}">Research</a>
   <a class="active" href="{{ '/projects' | relative_url }}">Other Projects</a>
+  <a href="{{ '/cv' | relative_url }}">CV</a>
 </nav>
 
 <div class="home-layout">
@@ -39,9 +40,7 @@ The project helps organize clothing items, process iPhone photos, create listing
 
 ## Wimbledon 2008 Comments
 
-A scraping project focused on collecting and organizing online comments related to Wimbledon 2008.
-
-The project explores how people discuss tennis history, player narratives, match legacy, and the cultural memory of one of the most iconic matches in tennis.
+A scraping project focused on collecting and organizing online comments related to Wimbledon 2008 Men's Final Youtube Video from the Wimbledon's Official Youtube Channel.
 
 **Tools:** Python, web scraping, text processing
 

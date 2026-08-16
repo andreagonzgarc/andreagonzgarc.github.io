@@ -7,6 +7,7 @@ title: Research
   <a href="{{ '/' | relative_url }}">About</a>
   <a class="active" href="{{ '/research' | relative_url }}">Research</a>
   <a href="{{ '/projects' | relative_url }}">Other Projects</a>
+  <a href="{{ '/cv' | relative_url }}">CV</a>
 </nav>
 
 <div class="home-layout">

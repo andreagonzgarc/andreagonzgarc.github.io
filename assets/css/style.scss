@@ -293,6 +293,33 @@ a:hover {
 }
 
 
+/* =========================================================
+   PROFILE GITHUB LINK
+   ========================================================= */
+
+.profile-separator {
+  margin: 0 5px;
+  color: #555;
+}
+
+.github-link,
+.github-link:visited {
+  color: $dark-blue;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.github-link i {
+  margin-left: 3px;
+  font-size: 0.95em;
+}
+
+.github-link:hover,
+.github-link:hover i {
+  color: $beamer-blue;
+}
+
+
 /* Location */
 
 .location {
@@ -613,7 +640,7 @@ i {
   }
 
 
-  .cv-pdf {
+  .cv-pdf {git 
     height: 700px;
   }
 }

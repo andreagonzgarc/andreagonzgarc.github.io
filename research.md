@@ -5,8 +5,8 @@ title: Research
 
 <nav class="topnav">
   <a href="{{ '/' | relative_url }}">About</a>
-  <a class="active" href="{{ '/cv' | relative_url }}">CV</a>
-  <a href="{{ '/research' | relative_url }}">Research</a>
+  <a href="{{ '/cv' | relative_url }}">CV</a>
+  <a class="active" href="{{ '/research' | relative_url }}">Research</a>
   <a href="{{ '/projects' | relative_url }}">Other Projects</a>
 </nav>
 
@@ -18,7 +18,14 @@ title: Research
 
 # Andrea González
 
-<p class="subtitle">Economist</p>
+<p class="subtitle">
+  Economist
+  <span class="profile-separator">|</span>
+  <a href="https://github.com/andreagonzgarc" target="_blank" class="github-link">
+    GitHub
+    <i class="fa-brands fa-github"></i>
+  </a>
+</p>
 
 <p class="location">Mexico City, Mexico</p>
 
